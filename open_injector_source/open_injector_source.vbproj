@@ -67,6 +67,9 @@
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ICOIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="InjectionLibrary">
       <HintPath>..\..\..\..\Desktop\InjectionLibrary.dll</HintPath>
@@ -206,6 +209,7 @@
     <EmbeddedResource Include="Resources\InjectionLibrary.dll" />
     <None Include="bin\x86\Release\InjectionLibrary.dll" />
     <None Include="Resources\PNGIcon.png" />
+    <Content Include="ICOIcon.ico" />
     <Content Include="Resources\UpdateLog.txt" />
   </ItemGroup>
   <ItemGroup>

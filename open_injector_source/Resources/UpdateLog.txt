@@ -89,3 +89,8 @@ v3.2
 - Update log created
 - About form was added
 - New injection methods were implemented (ManualMap & ThreadHijack)
+
+v3.3
+- Couple typing mistakes fixed.
+- Bugs and mistakes fixed in the code.
+- GitHub added

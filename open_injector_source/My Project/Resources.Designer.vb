@@ -95,9 +95,12 @@ Namespace My.Resources
         '''This is the official update log of the open injector.
         '''////////////////////////////////////////////////////////////////////////////////////////////////////////
         '''
+        '''
+        '''About:
+        '''
         '''Open Injector is open source based injector coded in .NET, but it uses C# dependent library for injection functions.
         '''The library&apos;s source code is also available for anyone to download.
-        '''You can find the original thread of the InjectorLibrary from t [rest of string was truncated]&quot;;.
+        '''You can find the original thread of the InjectorLibra [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property UpdateLog() As String
             Get

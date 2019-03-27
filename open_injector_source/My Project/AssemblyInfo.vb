@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("open_injector_source")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("Open Injector V3.2")>
+<Assembly: AssemblyDescription("The most advanced open source .NET injector on the planet.")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("open_injector_source")>
-<Assembly: AssemblyCopyright("Copyright ©  2019")>
+<Assembly: AssemblyProduct("")>
+<Assembly: AssemblyCopyright("")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("3.2.0.0")>
-<Assembly: AssemblyFileVersion("3.2.0.0")>
+<Assembly: AssemblyVersion("3.3.0.0")>
+<Assembly: AssemblyFileVersion("3.3.0.0")>

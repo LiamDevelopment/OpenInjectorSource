@@ -148,11 +148,11 @@ Partial Class About
         Me.Label8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Blue
-        Me.Label8.Location = New System.Drawing.Point(130, 141)
+        Me.Label8.Location = New System.Drawing.Point(129, 141)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 15)
+        Me.Label8.Size = New System.Drawing.Size(86, 15)
         Me.Label8.TabIndex = 14
-        Me.Label8.Text = "Jason profile"
+        Me.Label8.Text = "Jason's profile"
         '
         'About
         '
