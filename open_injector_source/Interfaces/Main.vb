@@ -56,6 +56,7 @@ Public Class Main
     End Sub
 #End Region 'Edits to the interface
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.CheckForIllegalCrossThreadCalls = False
         Me.Text = "Open Injector v" & Variables.ProductVersion
         If My.Settings.SettingsAutoUpdate = True Then
             If Not CheckLatest("https://www.dropbox.com/s/4socxab6fo92m6y/InjectorVersion.txt?dl=1", Application.ProductVersion) = True Then

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Main
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Main
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
@@ -43,7 +43,6 @@ Partial Class Main
         Me.lblDesc = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.CPRunning = New System.Windows.Forms.Timer(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.gpInjectList.SuspendLayout()
         CType(Me.pbProcssIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -104,6 +103,7 @@ Partial Class Main
         Me.btnSelect.TabIndex = 4
         Me.btnSelect.TabStop = False
         Me.btnSelect.Text = "Select"
+        Me.ToolTip1.SetToolTip(Me.btnSelect, "Opens the process list dialog.")
         Me.btnSelect.UseVisualStyleBackColor = True
         '
         'gpInjectList
@@ -168,6 +168,7 @@ Partial Class Main
         Me.btnInject.TabIndex = 6
         Me.btnInject.TabStop = False
         Me.btnInject.Text = "Inject"
+        Me.ToolTip1.SetToolTip(Me.btnInject, "Injects the selected DLL(s) to the targer process.")
         Me.btnInject.UseVisualStyleBackColor = True
         '
         'btnAbout
@@ -179,6 +180,7 @@ Partial Class Main
         Me.btnAbout.TabIndex = 7
         Me.btnAbout.TabStop = False
         Me.btnAbout.Text = "About"
+        Me.ToolTip1.SetToolTip(Me.btnAbout, "Open the about dialog.")
         Me.btnAbout.UseVisualStyleBackColor = True
         '
         'btnSettings
@@ -190,6 +192,7 @@ Partial Class Main
         Me.btnSettings.TabIndex = 8
         Me.btnSettings.TabStop = False
         Me.btnSettings.Text = "Settings"
+        Me.ToolTip1.SetToolTip(Me.btnSettings, "Opens a settings dialog.")
         Me.btnSettings.UseVisualStyleBackColor = True
         '
         'lblProcessName
@@ -239,22 +242,12 @@ Partial Class Main
         Me.CPRunning.Enabled = True
         Me.CPRunning.Interval = 200
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(259, 53)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.WindowText
         Me.ClientSize = New System.Drawing.Size(344, 254)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lblDesc)
         Me.Controls.Add(Me.lblInfo)
         Me.Controls.Add(Me.pbProcssIcon)
@@ -296,5 +289,4 @@ Partial Class Main
     Friend WithEvents lblDesc As Label
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents CPRunning As Timer
-    Friend WithEvents Button2 As Button
 End Class
