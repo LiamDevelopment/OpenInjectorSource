@@ -68,7 +68,7 @@ Module InjectionClass
                     Variables.TargetCount = Variables.dllDictionary.Count
 
                     'Reset the succes count to start counting again from 0
-                    Variables.SuccesCount = 0
+                    Variables.SuccessCount = 0
 
                     'Wait for the injection delay if it was set
                     If My.Settings.SettingsDelayBetween > 0 Then wait(My.Settings.SettingsDelayBetween)
@@ -82,7 +82,7 @@ Module InjectionClass
                         Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
                         If InjectionClass.StandardInjection(p.Id, inj.Value) = True Then
                             LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (Standard Injection)", ConsoleColor.Green)
-                            Variables.SuccesCount = +1
+                            Variables.SuccessCount = +1
                         Else
                             MsgBox("Something went wrong while trying to inject " & inj.Key & " with Standard Injection.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
                             Return False
@@ -91,7 +91,7 @@ Module InjectionClass
                         Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
                         If InjectionClass.ThreadHijack(p.Id, inj.Value) = True Then
                             LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (ThreadHijacking)", ConsoleColor.Green)
-                            Variables.SuccesCount = +1
+                            Variables.SuccessCount = +1
                         Else
                             MsgBox("Something went wrong while trying to inject " & inj.Key & " with ThreadHijacking.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
                             Return False
@@ -100,7 +100,7 @@ Module InjectionClass
                         Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
                         If InjectionClass.ManualMap(p.Id, inj.Value) = True Then
                             LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (ManualMap)", ConsoleColor.Green)
-                            Variables.SuccesCount = +1
+                            Variables.SuccessCount = +1
                         Else
                             MsgBox("Something went wrong while trying to inject " & inj.Key & " with Manual Map.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
                             Return False
@@ -111,7 +111,7 @@ Module InjectionClass
                     End If
 
                 Next
-                If Variables.SuccesCount = Variables.TargetCount Then
+                If Variables.SuccessCount = Variables.TargetCount Then
                     MsgBox("Injection has completed succesfully!", MsgBoxStyle.Information, "Open Injector" & Variables.ProductVersion)
                 Else
                     MsgBox("Injection has completed succesfully, but there was a error with some dll(s)!", MsgBoxStyle.Exclamation, "Open Injector" & Variables.ProductVersion)

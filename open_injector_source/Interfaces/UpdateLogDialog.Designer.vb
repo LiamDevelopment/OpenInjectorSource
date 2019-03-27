@@ -29,12 +29,14 @@ Partial Class UpdateLogDialog
         'LogBox
         '
         Me.LogBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LogBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LogBox.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LogBox.Location = New System.Drawing.Point(0, 0)
+        Me.LogBox.Margin = New System.Windows.Forms.Padding(7, 3, 3, 3)
         Me.LogBox.Name = "LogBox"
         Me.LogBox.ReadOnly = True
         Me.LogBox.Size = New System.Drawing.Size(830, 675)
         Me.LogBox.TabIndex = 0
+        Me.LogBox.TabStop = False
         Me.LogBox.Text = ""
         '
         'UpdateLogDialog

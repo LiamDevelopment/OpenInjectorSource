@@ -12,6 +12,10 @@
     End Sub
 
     Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-        Process.Start("https://github.com/LiamDevelopment/OpenInjector")
+        Process.Start("https://github.com/LiamDevelopment/OpenInjectorSource")
+    End Sub
+
+    Private Sub About_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label5.Text = "Project started by Liam (2018-" & Date.Today.Year & ")"
     End Sub
 End Class

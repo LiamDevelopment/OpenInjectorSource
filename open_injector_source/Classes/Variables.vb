@@ -9,6 +9,6 @@
     Public Shared lbId As New ListBox
 
     Public Shared TargetCount As Integer
-    Public Shared SuccesCount As Integer
+    Public Shared SuccessCount As Integer
 
 End Class

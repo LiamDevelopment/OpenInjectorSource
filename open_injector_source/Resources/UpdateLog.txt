@@ -2,12 +2,43 @@
 This is the official update log of the open injector.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+About:
+
 Open Injector is open source based injector coded in .NET, but it uses C# dependent library for injection functions.
 The library's source code is also available for anyone to download.
 You can find the original thread of the InjectorLibrary from this link: https://www.mpgh.net/forum/showthread.php?t=531732
 
-Disclaimer: you're allowed to use this code as you wish, but please keep this file up to date.
-You don't need to give any credits.
+
+Licence:
+
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org/>
+
+
+Updates:
 
 v1.0
 - Application released at 3.1.2019
@@ -17,13 +48,13 @@ v1.1
 - Minor visual changes to the UI
 
 v1.2
-- Code was a bit more organised
-- Controls was renamed to stand a reasonable name
+- The code was a bit more organized
+- Controls were renamed to stand a reasonable name
 
 v1.3
-- Couple of 'try' statements was added in unstable functions
-- Code was cleared a bit more out
-- Auto inject was implemented
+- Couple of 'try' statements were added in unstable functions
+- The code was cleared a bit more out
+- Auto-inject was implemented
 
 v2.0
 - Huge update for the whole application
@@ -36,7 +67,7 @@ v2.0
 - Close after injection was added
 
 v2.5
-- Code was organized to represent a "professional" layout
+- The code was organized to represent a "professional" layout
 - Error logging was added to make the developing process easier
 
 v3.0
@@ -44,17 +75,17 @@ v3.0
 - Process information added
 - Crappy scrambling feature added
 - Update check was added
-- Save dlls feature was added
-- Architecture check was added for more compatible enviroment
+- Save DLL's feature was added
+- Architecture check was added for a more compatible environment
 - Crappy stealth injection was added
 - Injection delay was added
-- Theme settings was added
+- Theme settings were added
 
 v3.1
 - Process information tool was updated
-- Minor feature improvments
+- Minor feature improvements
 
 v3.2
 - Update log created
 - About form was added
-- New injection methods was implemented (ManualMap & ThreadHijack)
+- New injection methods were implemented (ManualMap & ThreadHijack)
