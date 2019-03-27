@@ -1,0 +1,60 @@
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////////
+This is the official update log of the open injector.
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Open Injector is open source based injector coded in .NET, but it uses C# dependent library for injection functions.
+The library's source code is also available for anyone to download.
+You can find the original thread of the InjectorLibrary from this link: https://www.mpgh.net/forum/showthread.php?t=531732
+
+Disclaimer: you're allowed to use this code as you wish, but please keep this file up to date.
+You don't need to give any credits.
+
+v1.0
+- Application released at 3.1.2019
+
+v1.1
+- Bug fixed in the process list that caused the application to crash.
+- Minor visual changes to the UI
+
+v1.2
+- Code was a bit more organised
+- Controls was renamed to stand a reasonable name
+
+v1.3
+- Couple of 'try' statements was added in unstable functions
+- Code was cleared a bit more out
+- Auto inject was implemented
+
+v2.0
+- Huge update for the whole application
+- Most of the bugs at the time was fixed
+- Process list was remade
+- Multi-threading added to the process list loading function to speed it up a lot
+- Visual changes
+- Gradient background added
+- Multi-injection was added
+- Close after injection was added
+
+v2.5
+- Code was organized to represent a "professional" layout
+- Error logging was added to make the developing process easier
+
+v3.0
+- Settings feature added
+- Process information added
+- Crappy scrambling feature added
+- Update check was added
+- Save dlls feature was added
+- Architecture check was added for more compatible enviroment
+- Crappy stealth injection was added
+- Injection delay was added
+- Theme settings was added
+
+v3.1
+- Process information tool was updated
+- Minor feature improvments
+
+v3.2
+- Update log created
+- About form was added
+- New injection methods was implemented (ManualMap & ThreadHijack)
