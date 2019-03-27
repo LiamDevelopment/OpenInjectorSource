@@ -85,6 +85,7 @@ Public Class ProcessInformation
         Me.Hide() '// Simple close form call
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSuspend.Click
+        MsgBox("There is known bug with this feature but this may still work.", MsgBoxStyle.Information, "Open Injector" & Variables.ProductVersion)
         Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
         SuspendProcess(p)
     End Sub
