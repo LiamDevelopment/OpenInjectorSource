@@ -1,5 +1,6 @@
 ﻿Module IsProcessRunning
     Public Function CheckIfRunning(ByVal ProcessName As String) As Boolean
+        If ProcessName = "" Then Return False   
         If Not ProcessName.Length > 0 Then Return False
         Dim p() As Process
         p = Process.GetProcessesByName(ProcessName)

@@ -42,6 +42,8 @@ Partial Class Main
         Me.lblInfo = New System.Windows.Forms.Label()
         Me.lblDesc = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.CPRunning = New System.Windows.Forms.Timer(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.gpInjectList.SuspendLayout()
         CType(Me.pbProcssIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -232,12 +234,27 @@ Partial Class Main
         Me.lblDesc.Size = New System.Drawing.Size(0, 13)
         Me.lblDesc.TabIndex = 12
         '
+        'CPRunning
+        '
+        Me.CPRunning.Enabled = True
+        Me.CPRunning.Interval = 200
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(259, 53)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.WindowText
         Me.ClientSize = New System.Drawing.Size(344, 254)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lblDesc)
         Me.Controls.Add(Me.lblInfo)
         Me.Controls.Add(Me.pbProcssIcon)
@@ -278,4 +295,6 @@ Partial Class Main
     Friend WithEvents lblInfo As Label
     Friend WithEvents lblDesc As Label
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents CPRunning As Timer
+    Friend WithEvents Button2 As Button
 End Class

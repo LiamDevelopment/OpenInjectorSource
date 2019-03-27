@@ -3,7 +3,7 @@ Imports JLibrary.PortableExecutable
 Imports System.ComponentModel
 Imports System.IO
 Public Class Main
-
+    Dim PCount As Integer = 0
 #Region "Styling"
     Private Sub Main_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         Try
@@ -55,7 +55,6 @@ Public Class Main
         End If
     End Sub
 #End Region 'Edits to the interface
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = "Open Injector v" & Variables.ProductVersion
         If My.Settings.SettingsAutoUpdate = True Then
@@ -76,25 +75,10 @@ Public Class Main
         End Try
     End Sub
     Private Sub tboxProcessName_TextChanged(sender As Object, e As EventArgs) Handles tboxProcessName.TextChanged
-        If CheckIfRunning(tboxProcessName.Text) = True Or CheckIfRunning(tboxProcessName.Text.ToLower) Then
-            Dim pID As Integer = ProcessID(tboxProcessName.Text)
-            LogDebug("Process is running: " & tboxProcessName.Text & ".exe (0x" & Hex(pID) & ")")
-            If ProcessDescription(pID) = "" Then
-                lblInfo.Text = "No Description" & " (" & Architecture.GetAppCompiledMachineType(ProcessStartupPath(pID)) & ")"
-            Else
-                lblInfo.Text = ProcessDescription(pID) & " (" & Architecture.GetAppCompiledMachineType(ProcessStartupPath(pID)) & ")"
-            End If
-            lblDesc.Text = "Process ID: 0x" & Hex(pID) & " (" & pID & ")"
-            pbProcssIcon.Image = ProcessIcon(pID)
-
-            Dim p As Process = Process.GetProcessById(pID)
-            Variables.TargetProcess = p.ProcessName
-            Variables.TargetProcessID = pID
-        Else
-            lblInfo.Text = Nothing
-            lblDesc.Text = Nothing
-            pbProcssIcon.Image = Nothing
-        End If
+        PCount = 0
+    End Sub
+    Private Sub tboxProcessName_KeyUp(sender As Object, e As KeyEventArgs) Handles tboxProcessName.KeyUp
+        If tboxProcessName.Text.Contains("0x") Then tboxProcessName.Text = ""
     End Sub
     Private Sub btnRemove_Click(sender As Object, e As EventArgs) Handles btnRemove.Click
         RemoveDLLFromListView()
@@ -121,6 +105,39 @@ Public Class Main
     Private Sub Main_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         LogDebug("Closing the application...")
         My.Settings.Save()
+    End Sub
+    Private Sub CPRunning_Tick(sender As Object, e As EventArgs) Handles CPRunning.Tick
+        If PCount = 0 Or Not PCount = Process.GetProcesses.Count Then 'Runs this when ever process count changes
+            PCount = Process.GetProcesses.Count 'Saves the current process count
+            If Not tboxProcessName.Text.Contains("0x") Then
+                If CheckIfRunning(tboxProcessName.Text) = True Or CheckIfRunning(tboxProcessName.Text.ToLower) Then
+                    Dim pID As Integer = ProcessID(tboxProcessName.Text)
+                    LogDebug("Process is running: " & tboxProcessName.Text & ".exe (0x" & Hex(pID) & ")")
+                    If ProcessDescription(pID) = "" Then
+                        lblInfo.Text = "No Description" & " (" & Architecture.GetAppCompiledMachineType(ProcessStartupPath(pID)) & ")"
+                    Else
+                        lblInfo.Text = ProcessDescription(pID) & " (" & Architecture.GetAppCompiledMachineType(ProcessStartupPath(pID)) & ")"
+                    End If
+                    lblDesc.Text = "Process ID: 0x" & Hex(pID) & " (" & pID & ")"
+                    pbProcssIcon.Image = ProcessIcon(pID)
+
+                    Dim p As Process = Process.GetProcessById(pID)
+                    Variables.TargetProcess = p.ProcessName
+                    Variables.TargetProcessID = pID
+                Else
+                    If Not Variables.TargetProcess = "" Then Variables.TargetProcess = ""
+                    If Not Variables.TargetProcessID = 0 Then Variables.TargetProcessID = 0
+                    lblInfo.Text = Nothing
+                    lblDesc.Text = Nothing
+                    pbProcssIcon.Image = Nothing
+                End If
+            End If
+        End If
+        If Variables.TargetProcess = "" Then
+            btnInject.Enabled = False
+        Else
+            btnInject.Enabled = True
+        End If
     End Sub
 End Class
 

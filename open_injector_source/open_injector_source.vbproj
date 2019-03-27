@@ -74,6 +74,9 @@
     <Reference Include="InjectionLibrary">
       <HintPath>..\..\..\..\Desktop\InjectionLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="PEHeaders">
+      <HintPath>..\..\..\Desktop\PEHeaders.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />

@@ -1,6 +1,5 @@
 ﻿Imports InjectionLibrary 'Imports the open source injection library for injection methods
 Imports JLibrary.PortableExecutable
-
 Module InjectionClass
 #Region "Functionality"
     Private Sub wait(ByVal seconds As Integer)
@@ -79,32 +78,46 @@ Module InjectionClass
                     If My.Settings.SettingsStealthInjection Then StealthInjection()
 
                     If My.Settings.SettingsInjectionMethod = 0 Then 'Standard Injection
-                        Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
-                        If InjectionClass.StandardInjection(p.Id, inj.Value) = True Then
-                            LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (Standard Injection)", ConsoleColor.Green)
-                            Variables.SuccessCount = +1
-                        Else
-                            MsgBox("Something went wrong while trying to inject " & inj.Key & " with Standard Injection.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
-                            Return False
-                        End If
+                        Try
+                            Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
+                            LogDebug(p.Threads.Count & " " & p.Modules.Count)
+                            If InjectionClass.StandardInjection(p.Id, inj.Value) = True Then
+                                LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (Standard Injection)", ConsoleColor.Green)
+                                LogDebug(p.Threads.Count & " " & p.Modules.Count)
+                                Variables.SuccessCount = +1
+                            Else
+                                MsgBox("Something went wrong while trying to inject " & inj.Key & " with Standard Injection.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
+                                Return False
+                            End If
+                        Catch ex As Exception
+                            LogDebug(ex.Message, ConsoleColor.Red)
+                        End Try
                     ElseIf My.Settings.SettingsInjectionMethod = 1 Then 'ThreadHijacking
-                        Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
-                        If InjectionClass.ThreadHijack(p.Id, inj.Value) = True Then
-                            LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (ThreadHijacking)", ConsoleColor.Green)
-                            Variables.SuccessCount = +1
-                        Else
-                            MsgBox("Something went wrong while trying to inject " & inj.Key & " with ThreadHijacking.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
-                            Return False
-                        End If
+                        Try
+                            Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
+                            If InjectionClass.ThreadHijack(p.Id, inj.Value) = True Then
+                                LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (ThreadHijacking)", ConsoleColor.Green)
+                                Variables.SuccessCount = +1
+                            Else
+                                MsgBox("Something went wrong while trying to inject " & inj.Key & " with ThreadHijacking.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
+                                Return False
+                            End If
+                        Catch ex As Exception
+                            LogDebug(ex.Message, ConsoleColor.Red)
+                        End Try
                     ElseIf My.Settings.SettingsInjectionMethod = 2 Then 'Manual Map
-                        Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
-                        If InjectionClass.ManualMap(p.Id, inj.Value) = True Then
-                            LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (ManualMap)", ConsoleColor.Green)
-                            Variables.SuccessCount = +1
-                        Else
-                            MsgBox("Something went wrong while trying to inject " & inj.Key & " with Manual Map.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
-                            Return False
-                        End If
+                        Try
+                            Dim p As Process = Process.GetProcessById(Variables.TargetProcessID)
+                            If InjectionClass.ManualMap(p.Id, inj.Value) = True Then
+                                LogDebug("Injection was succesfully: " & inj.Key & " --> 0x" & Hex(p.Id) & " (ManualMap)", ConsoleColor.Green)
+                                Variables.SuccessCount = +1
+                            Else
+                                MsgBox("Something went wrong while trying to inject " & inj.Key & " with Manual Map.", MsgBoxStyle.Critical, "Open Injector" & Variables.ProductVersion)
+                                Return False
+                            End If
+                        Catch ex As Exception
+                            LogDebug(ex.Message, ConsoleColor.Red)
+                        End Try
                     Else
                         MsgBox("Something went wrong with the setting please try to reset all the settings from the settings form.", MsgBoxStyle.Exclamation, "Open Injector" & Variables.ProductVersion)
                         Return False
@@ -125,10 +138,9 @@ Module InjectionClass
             Main.tboxProcessName.Text = ""
             Return False
         End If
-
         'Check if the close after injection is set to true
         If My.Settings.SettingsAutoExit = True Then Application.Exit()
-
+        Return True
     End Function
     Public Function ManualMap(ByVal targetProcessID As Integer, ByVal dllPath As String) As Boolean
         Dim injector As InjectionMethod = InjectionMethod.Create(InjectionMethodType.ManualMap)
