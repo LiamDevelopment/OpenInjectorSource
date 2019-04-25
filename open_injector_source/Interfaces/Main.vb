@@ -64,6 +64,14 @@ Public Class Main
             End If
         End If
         LogDebug("Log started...")
+        'Creates new registry keys
+        Dim args = Environment.GetCommandLineArgs()
+        Try
+            If Not args(1).Length = 0 Then ImportDLL.ImportFromCommandLine(args(1).ToString)
+        Catch ex As Exception
+            LogDebug("there were no arguments found...")
+            CreateNewRegKey()
+        End Try
     End Sub
     Private Sub btnImportDLL_Click(sender As Object, e As EventArgs) Handles btnImportDLL.Click
         Try

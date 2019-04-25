@@ -29,4 +29,13 @@
             Return False
         End If
     End Function
+    Public Function ImportFromCommandLine(ByVal FilePath As String)
+        Dim FileName As String = FilePath.Substring(FilePath.LastIndexOf("\")).Replace("\", "")
+        Dim NewItem As New ListViewItem(FileName)
+        NewItem.SubItems.Add(Architecture.GetAppCompiledMachineType(FilePath))
+        Main.dllListView.Items.Add(NewItem)
+
+        Variables.dllDictionary.Add(FileName, FilePath)
+        LogDebug("DLL was succesfully loaded from CommandLineArgs: " & FilePath & " Architecture: " & Architecture.GetAppCompiledMachineType(FilePath), ConsoleColor.Cyan)
+    End Function
 End Module

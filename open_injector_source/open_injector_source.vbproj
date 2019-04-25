@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Modules\Snippets\CreateRegistryKeys.vb" />
     <Compile Include="Interfaces\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
