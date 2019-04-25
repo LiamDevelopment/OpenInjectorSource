@@ -3,7 +3,7 @@ The most advanced open source .NET injector on the planet.
 
 
 ### Open Injector
-The open injector is lightweight, easy-to-use and adjustable for different things. The open injector is an open source project for anyone to collaborate with. This injector is using InjectionLibrary, coded by Jason. Rest of the injector is coded with .NET for speeding up the coding process.
+The open injector is lightweight, easy-to-use and adjustable for different things. The open injector is an open source project for anyone to collaborate with. This injector is using InjectionLibrary, coded by Jason in C#. Rest of the injector is coded with .NET for speeding up the coding process.
 
  ## Features
 * Easy to use but efficient process list
