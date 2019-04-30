@@ -1,9 +1,9 @@
-# OpenInjectorSource
-The most advanced open source .NET injector on the planet.
-
-
-### Open Injector
+# Open Injector
 The open injector is lightweight, easy-to-use and adjustable for different things. The open injector is an open source project for anyone to collaborate with. This injector is using InjectionLibrary, coded by Jason in C#. Rest of the injector is coded with .NET for speeding up the coding process.
+
+![MainView](https://gyazo.com/ed075011b2eabfccec96d17fe208c22a)
+
+The most advanced open source .NET injector on the planet.
 
  ## Features
 * Easy to use but efficient process list
@@ -28,3 +28,8 @@ The open injector is lightweight, easy-to-use and adjustable for different thing
 * At least Windows 8.1 recommended
 * Framework 4
 * At least 1MB available memory
+
+## Source Code
+* This project is completely open source and it will be kept like it in the future
+* Any kind of contribution is welcome
+* The source code can be found on [LiamDevelopment](https://github.com/LiamDevelopment/)'s GitHub account
